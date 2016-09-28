@@ -9,10 +9,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:id="@+id/linearLayout"
     android:orientation="vertical"
-    tools:context="dev.antego.solfedgio.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    tools:context="com.github.antego.solfeggio.MainActivity">
 </LinearLayout>

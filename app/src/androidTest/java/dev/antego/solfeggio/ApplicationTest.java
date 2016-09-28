@@ -1,4 +1,4 @@
-package dev.antego.solfedgio;
+package com.github.antego.solfeggio;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

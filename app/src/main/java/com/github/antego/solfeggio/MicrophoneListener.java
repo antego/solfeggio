@@ -1,14 +1,13 @@
-package dev.antego.solfedgio;
+package com.github.antego.solfeggio;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.util.Log;
 
-/**
- * Created by anton on 31.01.2016.
- */
+
 public class MicrophoneListener implements Runnable {
-    private final static int SAMPLING_RATE = 44100;
+    private final static int SAMPLING_RATE = 22050;
     private final static int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
     private final static int AUDIO_FORMAT = AudioFormat.ENCODING_PCM_16BIT;
     public final static int BUFFER_SIZE = 2048;
@@ -25,6 +24,10 @@ public class MicrophoneListener implements Runnable {
         floatBufferRe = new float[BUFFER_SIZE];
         floatBufferIm = new float[BUFFER_SIZE];
         recorder = new AudioRecord(MediaRecorder.AudioSource.MIC, SAMPLING_RATE, RECORDER_CHANNELS, AUDIO_FORMAT, BUFFER_SIZE);
+        float timeWindowSec = (float)BUFFER_SIZE / SAMPLING_RATE;
+        Log.d("", String.format("Time window: %.2f sec.", timeWindowSec));
+        Log.d("", String.format("Refresh rate: %.2f fps", (float)SAMPLING_RATE / BUFFER_SIZE));
+        Log.d("", String.format("Min frequency: %.2f Hz", 1.0 / timeWindowSec * 2));
     }
 
     @Override
