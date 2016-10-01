@@ -31,21 +31,7 @@ public class GraphicUtils {
      * No additional effects.
      *
      */
-    public static final String textVs =
-                    "attribute vec4 vPosition;" +
-                    "attribute vec2 a_texCoord;" +
-                    "varying vec2 v_texCoord;" +
-                    "void main() {" +
-                    "  gl_Position = vPosition;" +
-                    "  v_texCoord = a_texCoord;" +
-                    "}";
-    public static final String textFs =
-                    "precision mediump float;" +
-                    "varying vec2 v_texCoord;" +
-                    "uniform sampler2D s_texture;" +
-                    "void main() {" +
-                    "  gl_FragColor = texture2D(s_texture, v_texCoord);" +
-                    "}";
+
 
     public static int loadShader(int type, String shaderCode){
 
