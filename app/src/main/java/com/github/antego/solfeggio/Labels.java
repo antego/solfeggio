@@ -11,6 +11,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
+import java.util.Map;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -44,7 +45,7 @@ public class Labels {
                     "  gl_FragColor = texture2D(s_texture, v_texCoord);" +
                     "}";
 
-    public void init() {
+    public void init(Map<Float, String> ticks) {
         setupTriangle();
         int vertexShader = loadShader(GLES20.GL_VERTEX_SHADER, textVs);
         int fragmentShader = loadShader(GLES20.GL_FRAGMENT_SHADER, textFs);
