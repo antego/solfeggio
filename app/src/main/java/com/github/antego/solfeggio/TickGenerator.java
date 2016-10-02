@@ -1,6 +1,6 @@
 package com.github.antego.solfeggio;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,7 @@ public class TickGenerator {
             ticks.add((float)i*1000);
         }
 
-        Map<Float, String> ticksWithLabels = new HashMap<>();
+        Map<Float, String> ticksWithLabels = new LinkedHashMap<>();
         for (Float tickFreq : ticks) {
             float pos = 2 * (tickFreq - minFreq) / (samplingRate - minFreq) - 1;
             ticksWithLabels.put(pos, (int)(tickFreq / 1000) + "");
