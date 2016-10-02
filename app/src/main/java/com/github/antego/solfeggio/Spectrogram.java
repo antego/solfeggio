@@ -64,7 +64,9 @@ public class Spectrogram {
     }
 
     public void render(float[] fftPoints) {
-        yPosBuffer.put(fftPoints);
+        synchronized (fftPoints) {
+            yPosBuffer.put(fftPoints);
+        }
         yPosBuffer.position(0);
         GLES20.glUseProgram(graphProgram);
         int xPosHandler = GLES20.glGetAttribLocation(graphProgram, "xPosition"); //todo extract to init

@@ -112,7 +112,6 @@ public class Labels {
         int i = 0;
         int mPositionHandle = GLES20.glGetAttribLocation(textProgram, "vPosition");
         int mTexCoordLoc = GLES20.glGetAttribLocation(textProgram, "a_texCoord");
-        int mSamplerLoc = GLES20.glGetUniformLocation(textProgram, "s_texture");
         for (FloatBuffer vertexBuffer : bitmapPositions.values()) {
             GLES20.glEnableVertexAttribArray(mPositionHandle);
             GLES20.glVertexAttribPointer(mPositionHandle, 3,

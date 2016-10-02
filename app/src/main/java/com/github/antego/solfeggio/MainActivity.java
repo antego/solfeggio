@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void requestDraw(float[] spectr) {
-        System.arraycopy(spectr, 0, fftPoints, 0, fftPoints.length);
+        synchronized (fftPoints) {
+            System.arraycopy(spectr, 0, fftPoints, 0, fftPoints.length);
+        }
         mGLView.requestRender();
     }
 
