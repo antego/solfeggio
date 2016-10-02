@@ -80,7 +80,7 @@ public class Spectrogram {
 
         int mColorHandle = GLES20.glGetUniformLocation(graphProgram, "vColor");
         GLES20.glUniform4fv(mColorHandle, 1, color, 0);
-        GLES20.glDrawArrays(GLES20.GL_LINES, 0, vertexCount);
+        GLES20.glDrawArrays(GLES20.GL_LINE_STRIP, 0, vertexCount);
 
         GLES20.glDisableVertexAttribArray(xPosHandler);
         GLES20.glDisableVertexAttribArray(yPosHandler);

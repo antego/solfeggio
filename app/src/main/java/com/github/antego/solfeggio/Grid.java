@@ -34,7 +34,7 @@ public class Grid {
                     "  gl_FragColor = vColor;" +
                     "}";
 
-    float color[] = {0.63671875f, 0.76953125f, 0.22265625f, 1.0f};
+    float color[] = {0.5f, 0.5f, 0.5f, 1.0f};
 
     public void init(Map<Float, String> ticks) {
         xIndex = new float[ticks.size() * 2];

@@ -17,7 +17,7 @@ public class TickGenerator {
         Map<Float, String> ticksWithLabels = new HashMap<>();
         for (Float tickFreq : ticks) {
             float pos = 2 * (tickFreq - minFreq) / (samplingRate - minFreq) - 1;
-            ticksWithLabels.put(pos, tickFreq / 1000 + "");
+            ticksWithLabels.put(pos, (int)(tickFreq / 1000) + "");
         }
         return ticksWithLabels;
     }
